@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:macro name="vertical_post" params="name x y z color">
+        <link name="${name}">
+            <visual>
+                <origin xyz="0 0 0.15"/>
+                <geometry>
+                    <cylinder length="0.08" radius="0.01"/>
+                    <mass value="0.01"/>
+                </geometry>
+                <material name="${color}"/>
+            </visual>
+            <collision>
+                <origin xyz="0 0 0.15"/>
+                <geometry>
+                    <cylinder length="0.08" radius="0.01"/>
+                </geometry>
+            </collision>
+        </link>
+        <joint name="chassis_to_${name}" type="fixed">
+            <parent link="chassis"/>
+            <child link="${name}"/>
+            <origin xyz="${x} ${y} ${z}" rpy="0 0 0"/>
+        </joint>
+
+        <gazebo reference="${name}">
+            <material>
+                Gazebo/${color}
+            </material>
+        </gazebo>
+    </xacro:macro>
+</robot>
+    
