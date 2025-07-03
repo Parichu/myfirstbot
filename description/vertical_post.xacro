@@ -7,14 +7,14 @@
                 <origin xyz="0 0 0.15"/>
                 <mass value="0.001"/>
                 <geometry>
-                    <cylinder length="0.08" radius="0.01"/>
+                    <cylinder length="0.08" radius="0.005"/>
                 </geometry>
                 <material name="${color}"/>
             </visual>
             <collision>
                 <origin xyz="0 0 0.15"/>
                 <geometry>
-                    <cylinder length="0.08" radius="0.01"/>
+                    <cylinder length="0.08" radius="0.005"/>
                 </geometry>
             </collision>
         </link>
